@@ -4,6 +4,6 @@
 A Sales program for study how works a back end and and how implement an API for rest request.
 </h3>
 
-<b><i><u>Technologys</u>:</i><b>
+<b><i>Technologys:</i><b>
 
 <a href="https://spring.io/tools3/sts/all">Spring Boot</a>
