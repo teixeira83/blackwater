@@ -20,14 +20,7 @@ public class Adress {
     private String reference;
     private String complement;
 
-    public Adress(String street, String neighborhood, String code, String city, String state, String reference, String complement) {
-        this.street = street;
-        this.neighborhood = neighborhood;
-        this.code = code;
-        this.city = city;
-        this.state = state;
-        this.reference = reference;
-        this.complement = complement;
+    public Adress() {
     }
 
     public Long getId() {

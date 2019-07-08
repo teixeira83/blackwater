@@ -13,20 +13,14 @@ public class Client {
     private String name;
     private String email;
     private String password;
+
+    @Temporal(TemporalType.DATE)
     private Calendar birthDate;
 
     @OneToOne
     private Adress adress;
 
-    public Client(String name, String email, String password, Calendar birthDate) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.birthDate = birthDate;
-    }
-
-    public Adress getAdress() {
-        return adress;
+    public Client() {
     }
 
     public void setAdress(Adress adress) {
