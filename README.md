@@ -13,6 +13,6 @@ A Sales program for study how works a back end and and how implement an API for 
 
 I'm just studying and i know that this code don't have the best ways to resolve yours funcionalitys... 
 
-<i>Create an issue
-Send a pull request 
-Show me whats is wrong</i>
+<i>Create an issue</i>
+<i>Send a pull request</i> 
+<i>Show me whats is wrong</i>
