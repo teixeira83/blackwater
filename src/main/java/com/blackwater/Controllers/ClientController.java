@@ -27,10 +27,8 @@ public class ClientController {
         return clients;
     }
 
-//    @PostMapping("/client")
-//    public ResponseEntity<Client> insertClient(@RequestBody Client client) throws URISyntaxException {
-//    client = cr.create(client);
-//    cr.save()
-//    }
-
+    @RequestMapping(method = RequestMethod.POST)
+    public Client create(@RequestBody Client client){
+        return cr.save(client);
+    }
 }
