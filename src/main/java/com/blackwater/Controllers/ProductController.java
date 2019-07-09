@@ -1,8 +1,6 @@
 package com.blackwater.Controllers;
 
-import com.blackwater.Models.Client;
 import com.blackwater.Models.Product;
-import com.blackwater.Repositorys.AdressRepository;
 import com.blackwater.Repositorys.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;

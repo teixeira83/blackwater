@@ -1,9 +1,13 @@
 package com.blackwater.Models;
 
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.Calendar;
 
+
 @Entity
+@NoArgsConstructor
 public class Client {
 
     @Id
@@ -17,14 +21,20 @@ public class Client {
     @Temporal(TemporalType.DATE)
     private Calendar birthDate;
 
-    @OneToOne
-    private Adress adress;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private Address address;
 
-    public Client() {
+    public Client(String name, String email, String password, Calendar birthDate, Address address) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.birthDate = birthDate;
+        this.address = address;
     }
 
-    public void setAdress(Adress adress) {
-        this.adress = adress;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public Long getId() {

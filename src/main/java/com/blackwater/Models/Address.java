@@ -1,12 +1,12 @@
 package com.blackwater.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Entity
-public class Adress {
+@NoArgsConstructor
+public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +20,14 @@ public class Adress {
     private String reference;
     private String complement;
 
-    public Adress() {
+    public Address(String street, String neighborhood, String code, String city, String state, String reference, String complement) {
+        this.street = street;
+        this.neighborhood = neighborhood;
+        this.code = code;
+        this.city = city;
+        this.state = state;
+        this.reference = reference;
+        this.complement = complement;
     }
 
     public Long getId() {

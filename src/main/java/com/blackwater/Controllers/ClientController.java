@@ -1,34 +1,36 @@
 package com.blackwater.Controllers;
 
-import com.blackwater.Models.Adress;
 import com.blackwater.Models.Client;
-import com.blackwater.Repositorys.AdressRepository;
-import com.blackwater.Repositorys.ClientRepository;
+import com.blackwater.DTO.ClientDTO;
+import com.blackwater.Services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.URISyntaxException;
 import java.util.List;
 
 @RestController
 @RequestMapping("/clients")
 public class ClientController {
 
-    @Autowired
-    private ClientRepository cr;
+    private final ClientService clientService;
 
     @Autowired
-    private AdressRepository ar;
+    public ClientController(ClientService clientService) {
+        this.clientService = clientService;
+    }
 
     @RequestMapping(method = RequestMethod.GET)
     public List<Client> showClients() {
-        List<Client> clients = cr.findAll();
-        return clients;
+        return clientService.findAllClients();
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public Client create(@RequestBody Client client){
-        return cr.save(client);
+    public ResponseEntity<Client> insertClient(@RequestBody ClientDTO clientDTO){
+        Client client = clientService.saveClient(clientDTO.transformToClient());
+        return new ResponseEntity<>(client, HttpStatus.CREATED);
     }
+
+
 }
